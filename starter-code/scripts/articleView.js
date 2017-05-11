@@ -98,7 +98,14 @@ articleView.setTeasers = function() {
 
   // STRETCH GOAl!: change the 'Read On' link to 'Show Less'
 
-};
+    $('.read-on').on('click', function() {
+      event.preventDefault();
+      var $readOn = $(this).attr('href');
+      $(this).prev().children().show();
+
+
+    })
+  };
 
 // TODO: Call all of the above functions, once we are sure the DOM is ready.
 $(document).ready(function() {
@@ -106,4 +113,5 @@ $(document).ready(function() {
   articleView.handleAuthorFilter();
   articleView.handleCategoryFilter();
   articleView.handleMainNav();
+  articleView.setTeasers();
 })
