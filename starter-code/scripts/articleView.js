@@ -48,6 +48,7 @@ articleView.handleAuthorFilter = function() {
       // TODO: If the select box was changed to an option that is blank, we should
       //       show all the articles, except the one article we are using as a template.
       $('article').show();
+      ('article[data-content="cat"]').hide();
     }
     $('#category-filter').val('');
   });
@@ -62,7 +63,7 @@ articleView.handleCategoryFilter = function() {
     if ($(this).val()) {
       var $selection = $(this).val();
       $('article').hide();
-      $('[data-category="' + $selection + '"]').fadeIn(400);
+      $('article[data-category="' + $selection + '"]').fadeIn(400);
 
     } else {
       $('article').show();
